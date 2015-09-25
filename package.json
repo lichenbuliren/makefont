@@ -1,6 +1,6 @@
 {
   "name": "makefont",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "According to the given text converted to the corresponding font file，base on fontmin",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/lichenbuliren/makefont.git"
+  },
+  "bin": {
+    "makefont": "index.js"
   },
   "dependencies": {
     "commander": "^2.8.1",

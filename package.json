@@ -1,6 +1,6 @@
 {
   "name": "makefont",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "According to the given text converted to the corresponding font file，base on fontmin",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mz-team/makefont.git"
+    "url": "git://github.com/lichenbuliren/makefont.git"
   },
   "dependencies": {
     "commander": "^2.8.1",
@@ -23,7 +23,7 @@
   "author": "Heaven",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mz-team/makefont/issues"
+    "url": "https://github.com/makefont/issues"
   },
-  "homepage": "https://github.com/mz-team/makefont#readme"
+  "homepage": "https://github.com/makefont#readme"
 }

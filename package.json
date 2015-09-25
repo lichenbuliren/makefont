@@ -1,6 +1,6 @@
 {
   "name": "makefont",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "According to the given text converted to the corresponding font file，base on fontmin",
   "main": "index.js",
   "scripts": {

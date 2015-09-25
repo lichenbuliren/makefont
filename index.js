@@ -19,19 +19,17 @@ var fontPath,
     dest = path.resolve(process.cwd(), './dest');
 if (program.font) {
     fontPath = program.font;
-    console.log(program.font);
 } else {
     fontPath = path.resolve(process.cwd(), 'lib', program.args[0]);
-    console.log(fontPath);
 }
 if (program.src) {
     src = program.src;
     console.log(src);
 } else {
     src = path.resolve(process.cwd(), program.args[1] ? program.args[1] : src);
-    console.log(src);
 }
 
+console.log('start fontmin......');
 makefont.fontmin(fontPath, src, dest, function() {
     console.log('恭喜！，字体文件生成完毕。');
 });

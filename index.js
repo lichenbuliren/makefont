@@ -6,7 +6,7 @@ var makefont = require('./lib/makefont');
 
 var path = require('path');
 
-program.version('0.0.1')
+program.version('1.0.8')
     .usage('<fontname>')
     .option('-t, --font <font>', '指定字体文件路径',
         makefont.validateFilePath)

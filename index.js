@@ -6,31 +6,36 @@ var makefont = require('./lib/makefont');
 var fs = require('fs');
 
 var path = require('path');
+var sourcePath, destPath, fontPath;
 
 program.version(require('./package').version)
   .usage('<fontname>')
-  .option('-t, --font <font>', '指定字体文件路径',
-    makefont.validateFilePath)
-  .option('-s, --src [src]', '指定需要被抽取的文字来源文件目录路径', makefont.validateFilePath)
-  .option('-d, --desc', '指定生成字体文件的目标路径', './dest')
+  .option('-f, --font <font>', '字体源文件或目录', makefont.validateFilePath)
+  .option('-t, --target <target>', '字体生成目录，默认当前目录', '.')
+  .option('-s, --source <dirs>', '需要被抽取的文字来源文件或目录, 多个目录以逗号隔开，支持正则匹配', makefont.strToArray)
   .parse(process.argv);
 
-var fontPath,
-  src = './src',
-  dest = path.resolve(process.cwd(), './dest');
 if (program.font) {
   fontPath = program.font;
 } else {
-  fontPath = path.resolve(process.cwd(), 'lib', program.args[0]);
+  console.error('invalid font dir path');
+  process.exit(1);
 }
-if (program.src) {
-  src = program.src;
-  console.log(src);
+
+if (program.source) {
+  sourcePath = program.source;
 } else {
-  src = path.resolve(process.cwd(), program.args[1] ? program.args[1] : src);
+  console.error('invalid source dir path');
+  process.exit(1);
+}
+
+if (program.target) {
+  destPath = program.target;
+} else {
+  destPath = path.resolve(process.cwd(), '.');
 }
 
 console.log('start fontmin......');
-makefont.fontmin(fontPath, src, dest, function() {
+makefont.fontmin(fontPath, sourcePath, destPath, function () {
   console.log('恭喜！，字体文件生成完毕。');
 });

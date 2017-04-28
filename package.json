@@ -1,6 +1,6 @@
 {
   "name": "makefont",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "According to the given text converted to the corresponding font file，base on fontmin",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "commander": "2.8.1",
-    "fontmin": "0.9.2"
+    "fontmin": "0.9.2",
+    "glob": "^7.1.1"
   },
   "keywords": [
     "node",

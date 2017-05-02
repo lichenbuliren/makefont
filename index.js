@@ -1,4 +1,8 @@
 #!/usr/bin/env node
 
 var makefont = require('./lib');
-makefont.progress(makefont.init(process.argv));
+
+console.log('start fontmin !');
+makefont.progress(makefont.init(process.argv), function() {
+  console.log('fontmin success !');
+});

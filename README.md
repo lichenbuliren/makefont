@@ -9,7 +9,7 @@ $ npm install -g makefont
 
 使用 API
 ``` bash
-Usage: index <fontname>
+Usage: makefont <fontname>
 
   Options:
 
